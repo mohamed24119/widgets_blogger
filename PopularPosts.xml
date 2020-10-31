@@ -1,0 +1,82 @@
+<b:widget id='PopularPosts2' locked='true' title='سلايدر المشاركات الشائعة' type='PopularPosts' version='2' visible='true'>
+                  <b:widget-settings>
+                    <b:widget-setting name='numItemsToShow'>10</b:widget-setting>
+                    <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+                    <b:widget-setting name='showSnippets'>false</b:widget-setting>
+                    <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+                  </b:widget-settings>
+                  <b:includable id='main' var='this'>
+                    <b:include name='widget-title'/>
+                    <div class='widget-content'>
+                      <div class='featured PopularPosts show-sidebar grid grid-1'>
+                        <div class='articles main-carousel'>
+                          <b:loop values='data:posts filter (p =&gt; p.id != data:view.postId)' var='post'>
+                            <article class='article-posts'>
+                              <div class='box'>
+                                <a class='thumbnail' expr:href='data:post.url'>
+                                  <b:if cond='data:post.featuredImage'>
+                                    <b:with value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 1600, &quot;1:1&quot;) : data:post.thumbnail' var='image'>
+                                      <img class='lozad' expr:alt='data:post.title' expr:src='data:image' loading='lazy'/>
+                                    </b:with>
+                                    <b:else/>
+                                    <b:include name='MigoMagDefaultImage'/>
+                                  </b:if>
+                                </a>
+                                <div class='box-content'>
+                                  <b:if cond='data:post.title != &quot;&quot;'>
+                                    <a class='title' expr:href='data:post.url'>
+                                      <data:post.title/>
+                                    </a>
+                                  </b:if>
+                                  <div class='meta'>
+                                    <i class='icon far fa-calendar-alt'/>
+                                    <b:include data='post' name='MigoMagPostTimestamp'/>
+                                  </div>
+                                </div>
+                              </div>
+                            </article>
+                          </b:loop>
+                        </div>
+                      </div>
+                    </div>
+                  </b:includable>
+                  <b:includable id='MigoMagPostTimestamp'>
+                    <b:if cond='data:post.url'>
+                      <meta expr:content='data:post.url.canonical'/>
+                      <time class='time' expr:datetime='data:post.date.iso8601' expr:title='data:post.date format &quot;dd MM y&quot;'>
+                        <b:eval expr='data:post.date format &quot;dd MMM y&quot;'/>
+                      </time>
+                    </b:if>
+                  </b:includable>
+                  <b:includable id='blogThisShare'/>
+                  <b:includable id='bylineByName' var='byline'/>
+                  <b:includable id='bylineRegion' var='regionItems'/>
+                  <b:includable id='commentsLink'/>
+                  <b:includable id='commentsLinkIframe'/>
+                  <b:includable id='emailPostIcon'/>
+                  <b:includable id='facebookShare'/>
+                  <b:includable id='footerBylines'/>
+                  <b:includable id='googlePlusShare'/>
+                  <b:includable id='headerByline'/>
+                  <b:includable id='linkShare'/>
+                  <b:includable id='otherSharingButton'/>
+                  <b:includable id='platformShare'/>
+                  <b:includable id='postAuthor'/>
+                  <b:includable id='postCommentsLink'/>
+                  <b:includable id='postJumpLink' var='post'/>
+                  <b:includable id='postLabels'/>
+                  <b:includable id='postLocation'/>
+                  <b:includable id='postReactions'/>
+                  <b:includable id='postShareButtons'/>
+                  <b:includable id='postTimestamp'/>
+                  <b:includable id='sharingButton'/>
+                  <b:includable id='sharingButtonContent'/>
+                  <b:includable id='sharingButtons'/>
+                  <b:includable id='sharingButtonsMenu'/>
+                  <b:includable id='sharingPlatformIcon'/>
+                  <b:includable id='snippetedPostByline'/>
+                  <b:includable id='snippetedPostContent'/>
+                  <b:includable id='snippetedPostThumbnail'/>
+                  <b:includable id='snippetedPostTitle'/>
+                  <b:includable id='snippetedPosts'/>
+                </b:widget>
