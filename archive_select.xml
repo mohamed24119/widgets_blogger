@@ -1,0 +1,34 @@
+<b:widget id='BlogArchive1' locked='true' title='أرشيف' type='BlogArchive' version='2' visible='true'>
+                    <b:widget-settings>
+                      <b:widget-setting name='showStyle'>MENU</b:widget-setting>
+                      <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
+                      <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
+                      <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
+                      <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
+                      <b:widget-setting name='weekPattern'>MM/dd</b:widget-setting>
+                      <b:widget-setting name='chronological'>false</b:widget-setting>
+                      <b:widget-setting name='showPosts'>false</b:widget-setting>
+                      <b:widget-setting name='frequency'>MONTHLY</b:widget-setting>
+                    </b:widget-settings>
+                    <b:includable id='main' var='this'>
+                      <b:include name='widget-title'/>
+                      <b:include name='content'/>
+                    </b:includable>
+                    <b:includable id='content'>
+                      <div class='widget-content p-2'>
+                        <div class='form-group mb-0'>
+                          <select class='form-control' onChange='window.location.href=this.value'>
+                            <b:loop values='data:data' var='i'>
+                              <option expr:value='data:i.url'>
+                                <data:i.name/> ( <data:i.post-count/> مشاركة )
+                              </option>
+                            </b:loop>
+                          </select>
+                        </div>
+                      </div>
+                    </b:includable>
+                    <b:includable id='flat'/>
+                    <b:includable id='hierarchy'/>
+                    <b:includable id='interval' var='intervals'/>
+                    <b:includable id='posts' var='posts'/>
+                  </b:widget>
