@@ -1,0 +1,38 @@
+<b:widget id='BlogList1' locked='false' title='مقالات خارجية' type='BlogList' version='2' visible='true'>
+                      <b:widget-settings>
+                        <b:widget-setting name='showItemThumbnail'>true</b:widget-setting>
+                        <b:widget-setting name='sortType'>LAST_UPDATE_DESCENDING</b:widget-setting>
+                        <b:widget-setting name='numItemsToShow'>0</b:widget-setting>
+                        <b:widget-setting name='showTimePeriodSinceLastUpdate'>true</b:widget-setting>
+                        <b:widget-setting name='showIcon'>true</b:widget-setting>
+                        <b:widget-setting name='showItemTitle'>true</b:widget-setting>
+                        <b:widget-setting name='showItemSnippet'>true</b:widget-setting>
+                      </b:widget-settings>
+                      <b:includable id='main'>
+                        <div class='blog-list' expr:id='data:widget.instanceId'>
+                          <div expr:id='data:widget.instanceId + &quot;_blogs&quot;'>
+                            <div class='featured show-sidebar grid grid-1'>
+                              <div class='cat-title'><a>مقالات خارجية</a></div>
+                              <div class='articles main-carousel'>
+                                <b:include name='MigoMagBlogList'/>
+                              </div>
+                            </div>
+                          </div>
+                          <b:if cond='data:numItemsToShow != 0 and data:totalItems gt data:numItemsToShow'>
+                            <div class='show-option'>
+                              <span expr:id='data:widget.instanceId + &quot;_show-n&quot;' style='display: none;'>
+                                <a href='javascript:void(0)' onclick='return false;'>
+                                  <data:showNText/>
+                                </a>
+                              </span>
+                              <span expr:id='data:widget.instanceId + &quot;_show-all&quot;' style='margin-left: 5px;'>
+                                <a href='javascript:void(0)' onclick='return false;'>
+                                  <data:showAllText/>
+                                </a>
+                              </span>
+                            </div>
+                          </b:if>
+                        </div>
+                      </b:includable>
+                      <b:includable id='content'/>
+                    </b:widget>
