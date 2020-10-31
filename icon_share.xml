@@ -1,0 +1,48 @@
+<b:if cond='!data:view.isError'>
+<span id='open-share'>
+<span class='icon fa fa-share-alt bg-share'/>
+</span>
+<div id='share-link'>
+<ul class='share-link'>
+<li class='bg-whatsapp'>
+<a data-action='share/whatsapp/share' expr:href='&quot;https://api.whatsapp.com/send?text=&quot; + data:blog.pageName + &quot;  &quot; + data:blog.url' rel='noopener' target='_blank' title='شارك الصفحة مع أصدقائك على الواتساب'>
+<span class='icon fab fa-whatsapp'/>
+</a>
+</li>
+<li class='bg-telegram'>
+<a expr:href='&quot;https://telegram.me/share/url?text=&quot; + data:blog.pageName + &quot;&quot; + data:blog.url' rel='noopener' target='_blank' title='شارك الصفحة مع أصدقائك على تليجرام'>
+<span class='icon fab fa-telegram-plane'/></a>
+</li>
+<li class='bg-messenger'>
+<a expr:href='&quot;https://www.facebook.com/dialog/send?link=&quot; + data:blog.url + &quot;&amp;name=&quot; + data:blog.pageName + &quot;&amp;app_id=736541813854798&amp;redirect_uri=&quot; + data:blog.homepageUrl + &quot;&amp;display=popup&quot;' rel='noopener' target='_blank' title='شارك الصفحة مع أصدقائك على فيسبوك مسنجر'>
+<span class='icon fab fa-facebook-messenger'/>
+</a>
+</li>
+<li class='bg-facebook'>
+<a expr:href='&quot;https://www.facebook.com/sharer/sharer.php?u=&quot; + data:blog.url' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' rel='noopener' target='_blank' title='شارك الصفحة على فيسبوك'>
+<span class='icon fab fa-facebook-f'/>
+</a>
+</li>
+<li class='bg-twitter'>
+<a expr:href='&quot;https://twitter.com/intent/tweet?text=&quot; + data:blog.pageName + &quot; &quot; + data:blog.url' rel='noopener' target='_blank' title='شارك الصفحة على تويتر'>
+
+<span class='icon fab fa-twitter'/></a>
+</li>
+<li class='bg-linkedin'>
+<a expr:href='&quot;https://www.linkedin.com/shareArticle?mini=true&amp;url=&quot; + data:blog.url' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' rel='noopener' target='_blank' title='شارك الصفحة على لينكد إن'>
+<span class='icon fab fa-linkedin-in'/>
+</a>
+</li>
+<li class='bg-pinterest'>
+<a expr:href='&quot;https://pinterest.com/pin/create/button/?url=&quot; + data:blog.url' rel='noopener' target='_blank' title='شارك الصفحة على بنترست'> 
+<span class='icon fab fa-pinterest bg-pinterest-p'/></a>
+</li>
+
+<li class='bg-envelope'>
+<a expr:href='&quot;mailto:?subject=&quot; + data:blog.pageName + &quot;  &quot; + data:blog.url' rel='noopener' target='_blank' title='شارك الصفحة مع أصدقائك بالبريد الالكتروني'>
+<span class='icon fas fa-envelope bg-envelope'/></a>
+</li>
+</ul>
+<div id='close-share'/>
+</div>
+</b:if>
