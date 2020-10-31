@@ -1,0 +1,66 @@
+ <b:widget id='FeaturedPost1' locked='true' title='مشاركة مميزة' type='FeaturedPost' version='2' visible='true'>
+                      <b:widget-settings>
+                        <b:widget-setting name='showSnippet'>false</b:widget-setting>
+                        <b:widget-setting name='showPostTitle'>true</b:widget-setting>
+                        <b:widget-setting name='postId'>7467209267241128858</b:widget-setting>
+                        <b:widget-setting name='showFirstImage'>true</b:widget-setting>
+                        <b:widget-setting name='useMostRecentPost'>false</b:widget-setting>
+                      </b:widget-settings>
+                      <b:includable id='main' var='this'>
+                        <div class='featured grid grid-1 MigoMag-featured-Post' role='feed'>
+                          <div class='articles'>
+                            <b:loop values='data:posts filter (p =&gt; p.id != data:view.postId)' var='post'>
+                              <article class='article-posts' role='article'>
+                                <div class='box'>
+                                  <a class='thumbnail' expr:href='data:post.url'>
+                                    <b:if cond='data:post.featuredImage'>
+                                      <img expr:alt='data:post.title' expr:src='data:post.featuredImage'/>
+                                      <b:else/>
+                                      <b:include name='MigoMagDefaultImage'/>
+                                    </b:if>
+                                  </a>
+                                  <div class='box-content'>
+                                    <b:if cond='data:post.title != &quot;&quot;'>
+                                      <h3 class='post-headding'>
+                                        <a class='title' expr:href='data:post.url'><data:post.title/></a>
+                                      </h3>
+                                    </b:if>
+                                  </div>
+                                </div>
+                              </article>
+                            </b:loop>
+                          </div>
+                        </div>
+                      </b:includable>
+                      <b:includable id='blogThisShare'/>
+                      <b:includable id='bylineByName' var='byline'/>
+                      <b:includable id='bylineRegion' var='regionItems'/>
+                      <b:includable id='commentsLink'/>
+                      <b:includable id='commentsLinkIframe'/>
+                      <b:includable id='emailPostIcon'/>
+                      <b:includable id='facebookShare'/>
+                      <b:includable id='footerBylines'/>
+                      <b:includable id='googlePlusShare'/>
+                      <b:includable id='headerByline'/>
+                      <b:includable id='linkShare'/>
+                      <b:includable id='otherSharingButton'/>
+                      <b:includable id='platformShare'/>
+                      <b:includable id='postAuthor'/>
+                      <b:includable id='postCommentsLink'/>
+                      <b:includable id='postJumpLink' var='post'/>
+                      <b:includable id='postLabels'/>
+                      <b:includable id='postLocation'/>
+                      <b:includable id='postReactions'/>
+                      <b:includable id='postShareButtons'/>
+                      <b:includable id='postTimestamp'/>
+                      <b:includable id='sharingButton'/>
+                      <b:includable id='sharingButtonContent'/>
+                      <b:includable id='sharingButtons'/>
+                      <b:includable id='sharingButtonsMenu'/>
+                      <b:includable id='sharingPlatformIcon'/>
+                      <b:includable id='snippetedPostByline'/>
+                      <b:includable id='snippetedPostContent'/>
+                      <b:includable id='snippetedPostThumbnail'/>
+                      <b:includable id='snippetedPostTitle'/>
+                      <b:includable id='snippetedPosts'/>
+                    </b:widget>
